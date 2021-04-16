@@ -1,0 +1,39 @@
+<h2 class="screen-align">GetallData</h2>
+<div id="template-isj9" class="row">
+    <div id="template-itd4" class="cell">
+        <label id="template-i1oy" class="label">Address</label>
+        <input id="template-ik1r" [(ngModel)]="Datas.address" [ngModelOptions]="{standalone: true}"
+        class="input form-control" />
+    </div>
+    <div id="template-isvy" class="cell">
+        <label id="template-idjg" class="label">Phone</label>
+        <input id="template-i8fn" [(ngModel)]="Datas.phone" [ngModelOptions]="{standalone: true}"
+        class="input form-control" />
+    </div>
+</div>
+<button id="template-isc2" (click)="GpCreate()" class="button btn btn-primary">Create</button>
+<div name="grid_template-irc8" class="">
+    <table id="table" class="table table-bordered  table-striped" data-show-header="true"
+    data-pagination="true" data-id-field="name">
+        <thead class="table table-hover">
+            <tr>
+                <th *ngFor="let column of columnDefs">{{column.headerName}}</th>
+            </tr>
+        </thead>
+        <tbody class="table-design" *ngIf="rowData.length==0">
+            <td style="text-align: center;" colspan="5">No Data Found</td>
+        </tbody>
+        <tbody class="table-design" *ngIf="rowData.length>0">
+            <tr *ngFor="let values of rowData | slice: (page-1) * paginationPageSize :(page-1) * paginationPageSize + paginationPageSize">
+                <td>{{ values.address }}</td>
+                <td>{{ values.phone }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="text-right">
+        <ngb-pagination class="d-flex justify-content-start" [(page)]="page" [maxSize]="5"
+        [rotate]="true" [pageSize]="paginationPageSize" [collectionSize]="rowData.length"
+        [boundaryLinks]="true"></ngb-pagination>
+    </div>
+</div>
+<div id="myGrid" class=""></div>

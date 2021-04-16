@@ -1,0 +1,14 @@
+<h2 class="screen-align">Createticket</h2>
+<div id="template-iik4" class="row">
+    <div id="template-it9v" class="cell">
+        <label id="template-ishz" class="label">FirstName</label>
+        <input id="template-iho3" [(ngModel)]="users.firstname"
+        [ngModelOptions]="{standalone: true}" class="input form-control" />
+    </div>
+    <div id="template-if3t" class="cell">
+        <label id="template-itan" class="label">LastName</label>
+        <input id="template-ilvh" [(ngModel)]="users.lastname"
+        [ngModelOptions]="{standalone: true}" class="input form-control" />
+    </div>
+</div>
+<button id="template-i9cm" (click)="GpCreate()" class="button btn btn-primary">Create</button>
